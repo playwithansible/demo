@@ -1,0 +1,12 @@
+name: PlayWithAnsible Demo
+on: push
+
+jobs:
+  runner-job:
+    runs-on: ubuntu-latest
+    services:
+      cli:
+        # Docker Hub image
+        image: ghcr.io/playwithansible/playwithansible-cli:0.2.4 
+    steps:
+      - run: docker exec -it cli playwithansible version
