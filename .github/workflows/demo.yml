@@ -9,4 +9,4 @@ jobs:
         image: ghcr.io/playwithansible/playwithansible-cli:0.2.6
         options: --name cli --entrypoint bash
     steps:
-      - run: docker exec -it cli playwithansible version
+      - run: docker exec -t cli playwithansible version
