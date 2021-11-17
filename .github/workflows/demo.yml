@@ -4,9 +4,9 @@ on: push
 jobs:
   runner-job:
     runs-on: ubuntu-latest
-    #services:
-    #  cli:
-    #    image: ghcr.io/playwithansible/playwithansible-cli:0.2.6
-    #    options: --name cli
+    services:
+      cli:
+        image: ghcr.io/playwithansible/playwithansible-cli:0.2.6
+        options: --name cli --entrypoint bash
     steps:
-      - run: docker run -t ghcr.io/playwithansible/playwithansible-cli:0.2.6 playwithansible version
+      - run: docker exec -it cli playwithansible version
