@@ -8,5 +8,6 @@ jobs:
       cli:
         # Docker Hub image
         image: ghcr.io/playwithansible/playwithansible-cli:0.2.6
+        options: --name cli
     steps:
       - run: docker exec -it cli playwithansible version
